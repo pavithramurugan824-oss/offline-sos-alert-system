@@ -1,0 +1,26 @@
+OFFLINE SOS ALERT – BASIC LOGIC (PSEUDO IMPLEMENTATION)
+
+1. User presses SOS button
+2. Application captures:
+   - Current GPS latitude and longitude
+   - Timestamp
+   - User emergency details (name, contact)
+
+3. Check network availability:
+   IF mobile network available:
+       Send SOS message via SMS to trusted contacts
+   ELSE IF internet available:
+       Send SOS data to server
+   ELSE:
+       Store SOS data locally on device
+
+4. Background service runs periodically:
+   - Checks for network availability
+   - If network becomes available:
+       Retrieve stored SOS data
+       Send alert automatically
+
+5. Optional enhancement:
+   - If Bluetooth is enabled:
+       Broadcast SOS signal to nearby devices
+       Nearby device relays message when network is found
